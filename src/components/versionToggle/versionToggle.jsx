@@ -23,7 +23,7 @@ const emitter = Store.emitter
 const styles = theme => ({
   versionToggleContainer: {
     position: 'absolute',
-    top: '82px',
+    top: '12px',
     right: '12px',
     zIndex: 999
   }

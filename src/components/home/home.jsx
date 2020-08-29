@@ -7,9 +7,10 @@ import {
 } from '@material-ui/core';
 import { withNamespaces } from 'react-i18next';
 import { colors } from '../../theme'
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import HowToVoteIcon from '@material-ui/icons/HowToVote';
+import WbIncandescentIcon from '@material-ui/icons/WbIncandescent';
 import DetailsIcon from '@material-ui/icons/Details';
-import LockIcon from '@material-ui/icons/Lock';
 
 const styles = theme => ({
   root: {
@@ -40,7 +41,7 @@ const styles = theme => ({
       minHeight: '50vh',
     }
   },
-  stake: {
+  earn: {
     backgroundColor: colors.white,
     '&:hover': {
       backgroundColor: colors.pink,
@@ -58,7 +59,7 @@ const styles = theme => ({
       color: colors.pink
     }
   },
-  vote: {
+  zap: {
     backgroundColor: colors.white,
     '&:hover': {
       backgroundColor: colors.blue,
@@ -81,7 +82,43 @@ const styles = theme => ({
       color: colors.blue
     },
   },
-  lock: {
+  apr: {
+    backgroundColor: colors.white,
+    '&:hover': {
+      backgroundColor: colors.lightBlack,
+      '& .title': {
+        color: colors.white
+      },
+      '& .icon': {
+        color: colors.white
+      }
+    },
+    '& .title': {
+      color: colors.lightBlack
+    },
+    '& .icon': {
+      color: colors.lightBlack
+    },
+  },
+  cover: {
+    backgroundColor: colors.white,
+    '&:hover': {
+      backgroundColor: colors.compoundGreen,
+      '& .title': {
+        color: colors.white,
+      },
+      '& .icon': {
+        color: colors.white
+      }
+    },
+    '& .title': {
+      color: colors.compoundGreen,
+    },
+    '& .icon': {
+      color: colors.compoundGreen
+    },
+  },
+  pool: {
     backgroundColor: colors.white,
     '&:hover': {
       backgroundColor: colors.tomato,
@@ -97,6 +134,24 @@ const styles = theme => ({
     },
     '& .icon': {
       color: colors.tomato
+    },
+  },
+  balancer: {
+    backgroundColor: colors.white,
+    '&:hover': {
+      backgroundColor: colors.purple,
+      '& .title': {
+        color: colors.white,
+      },
+      '& .icon': {
+        color: colors.white
+      }
+    },
+    '& .title': {
+      color: colors.purple,
+    },
+    '& .icon': {
+      color: colors.purple
     },
   },
   title: {
@@ -131,17 +186,21 @@ class Home extends Component {
 
     return (
       <div className={ classes.root }>
-        <Card className={ `${classes.card} ${classes.stake}` } onClick={ () => { this.nav(location.pathname+'staking') } }>
+        <Card className={ `${classes.card} ${classes.earn}` } onClick={ () => { this.nav(location.pathname+'staking') } }>
           <DetailsIcon className={ `${classes.icon} icon` } />
           <Typography variant={'h3'} className={ `${classes.title} title` }>Stake</Typography>
         </Card>
-        <Card className={ `${classes.card} ${classes.vote}` } onClick={ () => { this.nav(location.pathname+'vote') } }>
+        {/*<Card className={ `${classes.card} ${classes.zap}` } onClick={ () => { this.nav(location.pathname+'propose') } }>
+          <WbIncandescentIcon className={ `${classes.icon} icon` } />
+          <Typography variant={'h3'} className={ `${classes.title} title` }>Propose</Typography>
+        </Card>*/}
+        <Card className={ `${classes.card} ${classes.zap}` } onClick={ () => { this.nav(location.pathname+'vote') } }>
           <HowToVoteIcon className={ `${classes.icon} icon` } />
           <Typography variant={'h3'} className={ `${classes.title} title` }>Vote</Typography>
         </Card>
-        {/*<Card className={ `${classes.card} ${classes.lock}` } onClick={ () => { this.nav(location.pathname+'lock') }}>
-          <LockIcon className={ `${classes.icon} icon` } />
-          <Typography variant={'h3'} className={ `${classes.title} title` }>Lock</Typography>
+        {/*<Card className={ `${classes.card} ${classes.pool}` } onClick={ () => { this.nav(location.pathname+'claim') }}>
+          <AttachMoneyIcon className={ `${classes.icon} icon` } />
+          <Typography variant={'h3'} className={ `${classes.title} title` }>claim</Typography>
         </Card>*/}
       </div>
     )

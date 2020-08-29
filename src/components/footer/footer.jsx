@@ -79,7 +79,10 @@ class Footer extends Component {
       <div className={classes.footer}>
         <div className={classes.footerLinks}>
           <Link to={"/"} className={ classes.link }>
-            <Typography className={ classes.footerText } variant={ 'h6'}>Home</Typography>
+            <Typography className={ classes.footerText } variant={ 'h6'}>
+              <img alt="Toast.finance" src="/icon.png" height="24" style={{marginBottom: "-4px"}} />
+              &nbsp;Toast.finance
+            </Typography>
           </Link>
         </div>
       </div>

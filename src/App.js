@@ -20,7 +20,6 @@ import Propose from './components/propose';
 import Claim from './components/claim';
 import Vote from './components/vote';
 import VersionToggle from './components/versionToggle';
-import Lock from './components/lock';
 
 import {
   CONNECTION_CONNECTED,
@@ -81,7 +80,7 @@ class App extends Component {
   getBalancesReturned = () => {
     window.setTimeout(() => {
       dispatcher.dispatch({ type: GET_BALANCES_PERPETUAL, content: {} })
-    }, 300000)
+    }, 15000)
   }
 
   configureReturned = () => {
@@ -113,7 +112,7 @@ class App extends Component {
               minWidth: '100vw',
               justifyContent: 'center',
               alignItems: 'center',
-              background: "#f9fafb"
+              background: "rgb(202, 226, 185)"
             }}>
               <Account />
             </div>
@@ -125,34 +124,31 @@ class App extends Component {
               minHeight: '100vh',
               justifyContent: 'center',
               alignItems: 'center',
-              background: "#f9fafb"
+              background: "rgb(242, 255, 225)"
             }}>
               <Switch>
                 <Route path="/stake">
-                  <Header />
+                  <Footer />
                   <Stake />
                 </Route>
                 <Route path="/staking">
-                <Header />
                   <VersionToggle />
+                  <Footer />
                   <RewardsPools />
                 </Route>
                 <Route path="/vote">
-                  <Header />
                   <VersionToggle />
+                  <Footer />
                   <Vote />
                 </Route>
                 <Route path="/propose">
-                <Header />
                   <VersionToggle />
+                  <Footer />
                   <Propose />
                 </Route>
-                <Route path="/lock">
-                  <Header />
-                  <Lock />
-                </Route>
                 <Route path="/">
-                  <Home />
+                  <Footer />
+                  <RewardsPools />
                 </Route>
               </Switch>
             </div>

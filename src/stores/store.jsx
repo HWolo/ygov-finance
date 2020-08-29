@@ -121,114 +121,45 @@ class Store {
       },
       rewardPools: [
         {
-          id: 'yearn',
-          name: 'yearn',
-          website: 'curve.fi/y',
-          link: 'https://curve.fi/y',
-          depositsEnabled: false,
-          tokens: [
-            {
-              id: 'ycurvefi',
-              address: '0xdF5e0e81Dff6FAF3A7e52BA697820c5e32D806A8',
-              symbol: 'curve.fi',
-              abi: config.erc20ABI,
-              decimals: 18,
-              rewardsAddress: config.yCurveFiRewardsAddress,
-              rewardsABI: config.yCurveFiRewardsABI,
-              rewardsSymbol: 'YFI',
-              decimals: 18,
-              balance: 0,
-              stakedBalance: 0,
-              rewardsAvailable: 0
-            }
-          ]
-        },
-        {
           id: 'Balancer',
-          name: 'Balancer',
-          website: 'pools.balancer.exchange',
-          link: 'https://pools.balancer.exchange/#/pool/0x60626db611a9957C1ae4Ac5b7eDE69e24A3B76c5',
-          depositsEnabled: false,
-          tokens: [
-            {
-              id: 'bpt',
-              address: '0x60626db611a9957C1ae4Ac5b7eDE69e24A3B76c5',
-              symbol: 'BPT',
-              abi: config.erc20ABI,
-              decimals: 18,
-              rewardsAddress: config.balancerRewardsAddress,
-              rewardsABI: config.balancerRewardsABI,
-              rewardsSymbol: 'YFI',
-              decimals: 18,
-              balance: 0,
-              stakedBalance: 0,
-              rewardsAvailable: 0
-            }
-          ]
-        },
-        {
-          id: 'Governance',
-          name: 'Governance',
-          website: 'pools.balancer.exchange',
-          link: 'https://pools.balancer.exchange/#/pool/0x95c4b6c7cff608c0ca048df8b81a484aa377172b',
-          depositsEnabled: false,
-          tokens: [
-            {
-              id: 'bpt',
-              address: '0x95c4b6c7cff608c0ca048df8b81a484aa377172b',
-              symbol: 'BPT',
-              abi: config.bpoolABI,
-              decimals: 18,
-              rewardsAddress: config.governanceAddress,
-              rewardsABI: config.governanceABI,
-              rewardsSymbol: 'YFI',
-              decimals: 18,
-              balance: 0,
-              stakedBalance: 0,
-              rewardsAvailable: 0
-            }
-          ]
-        },
-        {
-          id: 'FeeRewards',
-          name: 'Fee Rewards',
-          website: 'ygov.finance',
-          link: 'https://ygov.finance/',
-          depositsEnabled: false,
-          tokens: [
-            {
-              id: 'yfi',
-              address: config.yfiAddress,
-              symbol: 'YFI',
-              abi: config.yfiABI,
-              decimals: 18,
-              rewardsAddress: config.feeRewardsAddress,
-              rewardsABI: config.feeRewardsABI,
-              rewardsSymbol: '$',
-              decimals: 18,
-              balance: 0,
-              stakedBalance: 0,
-              rewardsAvailable: 0
-            }
-          ]
-        },
-        {
-          id: 'GovernanceV2',
-          name: 'Governance V2',
-          website: 'ygov.finance',
-          link: 'https://ygov.finance/',
+          name: '$AVO (on Toast)',
+          website: 'Balancer',
+          link: 'https://pools.balancer.exchange/#/pool/0xcfcdb690bdc88f43f7cac7d968d0d66d2118ad20/',
+          stakingName: 'Farm more avocados',
           depositsEnabled: true,
           tokens: [
             {
-              id: 'yfi',
-              address: config.yfiAddress,
-              symbol: 'YFI',
+              id: 'avo',
+              address: '0xcfcdb690bdc88f43f7cac7d968d0d66d2118ad20',
+              symbol: 'AVO_DAI_BPT',
               abi: config.yfiABI,
               decimals: 18,
-              rewardsAddress: config.governanceV2Address,
-              rewardsABI: config.governanceV2ABI,
-              rewardsSymbol: '$',
-              decimals: 18,
+              rewardsAddress: '0x45352f928af429a01909b28e66b208c05de4df67',
+              rewardsABI: config.balancerRewardsABI,
+              rewardsSymbol: 'AVO',
+              balance: 0,
+              stakedBalance: 0,
+              rewardsAvailable: 0
+            }
+          ]
+        },
+        {
+          id: 'Uniswap',
+          name: '$HOUSE',
+          website: 'Uniswap',
+          link: 'https://uniswap.info/pair/0x2209b8260110af927AF0f2Eb96db471aE3Ab05EA',
+          stakingName: 'Earn income from your house',
+          depositsEnabled: true,
+          tokens: [
+            {
+              id: 'house',
+              address: '0x19810559df63f19cfe88923313250550edadb743',
+              symbol: 'HOUSE',
+              abi: config.yfiABI,
+              decimals: 0,
+              rewardsAddress: '0xc18109c4fee0b915cee8c56d65cc1b44c866aa35',
+              rewardsABI: config.governanceABI,
+              rewardsSymbol: 'HOUSE_ETH_UNI-LP',
               balance: 0,
               stakedBalance: 0,
               rewardsAvailable: 0

@@ -376,7 +376,7 @@ class Stake extends Component {
             variant="outlined"
             color="secondary"
             disabled={ loading }
-            onClick={ () => {  this.props.history.push('/staking') } }
+            onClick={ () => {  this.props.history.push('/') } }
           >
             <Typography variant={ 'h4'}>Back</Typography>
           </Button>
@@ -657,13 +657,6 @@ class Stake extends Component {
             InputProps={{
               endAdornment: <InputAdornment position="end" className={ classes.inputAdornment }><Typography variant='h3' className={ '' }>{ asset.symbol }</Typography></InputAdornment>,
               startAdornment: <InputAdornment position="end" className={ classes.inputAdornment }>
-                <div className={ classes.assetIcon }>
-                  <img
-                    alt=""
-                    src={ require('../../assets/'+asset.symbol+'-logo.png') }
-                    height="30px"
-                  />
-                </div>
               </InputAdornment>,
             }}
           />
