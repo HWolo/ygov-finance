@@ -397,7 +397,7 @@ class Stake extends Component {
           </div>
           <div className={ classes.overviewField }>
             <Typography variant={ 'h3' } className={ classes.overviewTitle }>Rewards Available</Typography>
-            <Typography variant={ 'h2' } className={ classes.overviewValue }>{ pool.tokens[0].rewardsSymbol == '$' ? pool.tokens[0].rewardsSymbol : '' } { pool.tokens[0].rewardsAvailable ? (pool.tokens[0].rewardsDecimals > 0 ? pool.tokens[0].rewardsAvailable.toExponential() : pool.tokens[0].rewardsAvailable.toFixed(2)) : "0" } { pool.tokens[0].rewardsSymbol != '$' ? pool.tokens[0].rewardsSymbol : '' }</Typography>
+            <Typography variant={ 'h2' } className={ classes.overviewValue }>{ pool.tokens[0].rewardsSymbol == '$' ? pool.tokens[0].rewardsSymbol : '' } { pool.tokens[0].rewardsAvailable ? (pool.tokens[0].rewardsDecimals > 0 ? (pool.tokens[0].rewardsAvailable / Math.pow(10, pool.tokens[0].rewardsDecimals)).toExponential() : pool.tokens[0].rewardsAvailable.toFixed(2)) : "0" } { pool.tokens[0].rewardsSymbol != '$' ? pool.tokens[0].rewardsSymbol : '' }</Typography>
           </div>
         </div>
         { ['FeeRewards'].includes(pool.id) &&
