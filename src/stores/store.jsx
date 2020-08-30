@@ -160,6 +160,7 @@ class Store {
               rewardsAddress: '0xc18109c4fee0b915cee8c56d65cc1b44c866aa35',
               rewardsABI: config.governanceABI,
               rewardsSymbol: 'HOUSE_ETH_UNI-LP',
+              rewardsDecimals: 18,
               balance: 0,
               stakedBalance: 0,
               rewardsAvailable: 0

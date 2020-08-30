@@ -241,6 +241,7 @@ class RewardPools extends Component {
                         color="secondary"
                         href={"https://t.me/toastfinance"}
                         target="_blank"
+                        style={{display: "inline"}}
                     >
                         <Typography variant={'h4'}>Telegram</Typography>
                     </Button>
