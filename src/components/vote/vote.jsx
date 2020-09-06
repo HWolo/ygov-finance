@@ -491,7 +491,7 @@ class Vote extends Component {
   }
 
   goToDashboard = () => {
-    window.open('https://gov.yearn.finance/', "_blank")
+    window.open('https://t.me/toastfinance', "_blank")
   }
 
   handleTabChange = (event, newValue) => {

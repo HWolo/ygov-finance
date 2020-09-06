@@ -237,7 +237,7 @@ class Proposal extends Component {
     const endTime = currentTime + (blocksTillEnd * 1000 * 13.8)
     const startTime = currentTime - (blocksSinceStart * 1000 * 13.8)
 
-    const yipURL = `https://yips.yearn.finance/YIPS/yip-${proposal.id}`;
+    const yipURL = `https://yips.toast.finance/YIPS/yip-${proposal.id}`;
 
     var address = null;
     if (proposal.executor) {

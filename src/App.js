@@ -12,6 +12,7 @@ import interestTheme from './theme';
 
 import Account from './components/account';
 import Footer from './components/footer';
+import ActualFooter from './components/actualfooter';
 import Home from './components/home';
 import Stake from './components/stake';
 import RewardsPools from './components/rewardPools';
@@ -130,25 +131,27 @@ class App extends Component {
                 <Route path="/stake">
                   <Footer />
                   <Stake />
+                  <ActualFooter />
                 </Route>
                 <Route path="/staking">
-                  <VersionToggle />
                   <Footer />
                   <RewardsPools />
+                  <ActualFooter />
                 </Route>
                 <Route path="/vote">
-                  <VersionToggle />
                   <Footer />
                   <Vote />
+                  <ActualFooter />
                 </Route>
                 <Route path="/propose">
-                  <VersionToggle />
                   <Footer />
                   <Propose />
+                  <ActualFooter />
                 </Route>
                 <Route path="/">
                   <Footer />
-                  <RewardsPools />
+                  <Home />
+                  <ActualFooter />
                 </Route>
               </Switch>
             </div>

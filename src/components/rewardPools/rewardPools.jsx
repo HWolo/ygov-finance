@@ -236,16 +236,6 @@ class RewardPools extends Component {
         return (
             <div style={{width: '100%'}}>
                 <div className={classes.root}>
-                    <Button
-                        variant="outlined"
-                        color="secondary"
-                        href={"https://t.me/toastfinance"}
-                        target="_blank"
-                        style={{display: "inline"}}
-                    >
-                        <Typography variant={'h4'}>Telegram</Typography>
-                    </Button>
-
                     <Card className={classes.addressContainer} onClick={this.overlayClicked}>
                         <div style={{
                             background: '#DC6BE5',
@@ -259,10 +249,6 @@ class RewardPools extends Component {
                         }}></div>
                         <Typography variant={'h4'} className={classes.walletAddress} noWrap>{address}</Typography>
                     </Card>
-
-                    <Typography variant={'h5'} className={classes.disaclaimer}><img src="/feature.jpg"
-                                                                                    width="400"/><br/><br/>The choice is
-                        yours.<br /><br /></Typography>
 
                     <Button
                         variant="outlined"
@@ -281,23 +267,20 @@ class RewardPools extends Component {
                     <hr />
                     {modalOpen && this.renderModal()}
                 </div>
-              <Typography variant={'h5'} className={classes.footer}><br /><br />Toast.finance is an untested clone of ZZZ.finance (itself based on YFI - ygov.finance). The main difference between ZZZ.finance and Toast.finance is that instead of having one token initially, there are two that work together - $HOUSE and $AVO. Apart from this, the important features of ZZZ remain true for Toast.finance - there are no dev wallets or funds, no presale, no airdrop, no early wallets. 100% owned by the community. The tokens have no inherent value and any value is up to the community. 20,000 $HOUSE and 100,000 $AVO were minted and all tokens were sent directly to the appropriate pools.
-                <br /><br /><u>$AVO tokenomics:</u><br />Total supply: 100,000 AVO<br />Decimals: 18 (spread that avo around)<br />Supply sent Pool A: 25,000 AVO to Pool A<br />Supply sent to Uniswap: 75,000 AVO to Pool AB
-                <br /><br /><u>$HOUSE tokenomics:</u><br />Total supply: 20,000 HOUSE<br />Decimals: 0 (no subdividing)<br />Supply sent to Uniswap: 5,000 HOUSE to Pool AB<br />Supply sent to Uniswap: 15,000 HOUSE to Pool B
-                <br /><br /><u>Pool A:</u><br />Pool A is a 98%/2% DAI/AVO Balancer pool.<br />To contribute to Pool A, you need to add DAI and AVO into the Balancer pool, which will give you BPT tokens. You can then stake your BPT tokens here by clicking "Farm more avocados" to receive a share of the 25,000 AVO tokens reserved for Pool A rewards.
-                <br /><br /><u>Pool AB:</u><br />Pool AB is a AVO/HOUSE Uniswap liquidity pool.<br />75,000 AVO and 5,000 HOUSE have been sent here and the UNI-V2 pool tokens have been burned. Liquidity is locked.
-                <br /><br /><u>Pool B:</u><br />Pool B is a HOUSE/ETH Uniswap liquidity pool.<br />15,000 HOUSE and 3 ETH have been sent here and the UNI-V2 pool tokens have been locked into the Pool B contract. Click "Earn income from your house" here, and you can stake your $HOUSE to get a share of these UNI-V2 tokens (which you can exchange for their worth in ETH and HOUSE).
-              </Typography>
               <Typography variant={'h5'} className={classes.footer} style={{textAlign: 'left'}}>
                 <br /><br /><u>Addresses:</u>
                 <br />Toast.finance Deployer - <a href="https://etherscan.io/address/0x6cef9EcD79e87F8a88143eE9b464119bB296dA8b" target="_blank">0x6cef9EcD79e87F8a88143eE9b464119bB296dA8b</a>
                   <br />HOUSE token - <a href="https://etherscan.io/address/0x19810559df63f19cfe88923313250550edadb743" target="_blank">0x19810559df63f19cfe88923313250550edadb743</a>
                   <br />AVO token - <a href="https://etherscan.io/address/0x774adc647a8d27947c8d7c098cdb4cdf30b126de" target="_blank">0x774adc647a8d27947c8d7c098cdb4cdf30b126de</a>
+                  <br />EGGS token - <a href="https://etherscan.io/address/0x98be5a6b401b911151853d94a6052526dcb46fe3" target="_blank">0x98be5a6b401b911151853d94a6052526dcb46fe3</a>
                   <br />Pool A - <a href="https://etherscan.io/address/0x45352f928af429a01909b28e66b208c05de4df67" target="_blank">0x45352f928af429a01909b28e66b208c05de4df67</a>
                   <br />Pool B - <a href="https://etherscan.io/address/0xc18109c4fee0b915cee8c56d65cc1b44c866aa35" target="_blank">0xc18109c4fee0b915cee8c56d65cc1b44c866aa35</a>
                   <br />Uniswap HOUSE-ETH pair - <a href="https://uniswap.info/pair/0x2209b8260110af927AF0f2Eb96db471aE3Ab05EA" target="_blank">0x2209b8260110af927AF0f2Eb96db471aE3Ab05EA</a>
                   <br />Uniswap HOUSE-AVO pair - <a href="https://uniswap.info/pair/0xbdde248cfe84258e16dbf3911c1ce9c93beb3eb9" target="_blank">0xbdde248cfe84258e16dbf3911c1ce9c93beb3eb9</a>
                   <br />Balancer DAI-AVO pool - <a href="https://pools.balancer.exchange/#/pool/0xcfcdb690bdc88f43f7cac7d968d0d66d2118ad20/" target="_blank">0xcfcdb690bdc88f43f7cac7d968d0d66d2118ad20</a>
+                  <br />Pool C - <a href="https://etherscan.io/address/0x2988d4c36feefe70f5889e9ac61ae075db7fd217" target="_blank">0x2988d4c36feefe70f5889e9ac61ae075db7fd217</a>
+                  <br />Balancer DAI-EGGS pool - <a href="https://pools.balancer.exchange/#/pool/0x6928f625e448cc4480378938d9e98439d7baf1b9/" target="_blank">0x6928f625e448cc4480378938d9e98439d7baf1b9</a>
+                  <br />Pool D - <a href="https://etherscan.io/address/0xdb93f1079d58802ec914907a55352f7e55374cc3" target="_blank">0xdb93f1079d58802ec914907a55352f7e55374cc3</a>
 
                   <br /><br /><u>Transactions:</u>
                   <br />HOUSE token contract creation - <a href="https://etherscan.io/tx/0xd24e2fc64d06518556998fc2f801567e1622e12ffa34214b4aff752a08e2a2a9" target="_blank">0xd24e2fc64d06518556998fc2f801567e1622e12ffa34214b4aff752a08e2a2a9</a>
@@ -324,13 +307,32 @@ class RewardPools extends Component {
                   <br />Balancer pool created - <a href="https://etherscan.io/tx/0xb7cdbb7accc4f791d111d8611c578423a1f54bd48dbb9020afe030314df7f610" target="_blank">0xb7cdbb7accc4f791d111d8611c578423a1f54bd48dbb9020afe030314df7f610</a>
                   <br />24,999.9 AVO sent to Pool A - <a href="https://etherscan.io/tx/0x14f12530d1191281b6a809bc5f679f37243e805a3aa8a428be6dc6f0100ed3d4" target="_blank">0x14f12530d1191281b6a809bc5f679f37243e805a3aa8a428be6dc6f0100ed3d4</a>
 
-                <br />Pool A setRewardDistribution<a href="https://etherscan.io/tx/0xfc6cd920e7a079a593b2b0951d51bc0a919d71351a6549daeb60e509e17bcbbe" target="_blank">0xfc6cd920e7a079a593b2b0951d51bc0a919d71351a6549daeb60e509e17bcbbe</a>
-                  <br />Pool A setYFI<a href="https://etherscan.io/tx/0x6fd06a5bb0075bd214605c858b861f492ac0e2732156e268ef2426046b61af87" target="_blank">0x6fd06a5bb0075bd214605c858b861f492ac0e2732156e268ef2426046b61af87</a>
-                  <br />Pool A notifyRewardAmount<a href="https://etherscan.io/tx/0x0fcab8478cb583f8a279cfdd9ff44bc6ec1248bb62b8c59ec407499f156a7ed7" target="_blank">0x0fcab8478cb583f8a279cfdd9ff44bc6ec1248bb62b8c59ec407499f156a7ed7</a>
+                  <br />Pool A setRewardDistribution - <a href="https://etherscan.io/tx/0xfc6cd920e7a079a593b2b0951d51bc0a919d71351a6549daeb60e509e17bcbbe" target="_blank">0xfc6cd920e7a079a593b2b0951d51bc0a919d71351a6549daeb60e509e17bcbbe</a>
+                  <br />Pool A setYFI - <a href="https://etherscan.io/tx/0x6fd06a5bb0075bd214605c858b861f492ac0e2732156e268ef2426046b61af87" target="_blank">0x6fd06a5bb0075bd214605c858b861f492ac0e2732156e268ef2426046b61af87</a>
+                  <br />Pool A notifyRewardAmount - <a href="https://etherscan.io/tx/0x0fcab8478cb583f8a279cfdd9ff44bc6ec1248bb62b8c59ec407499f156a7ed7" target="_blank">0x0fcab8478cb583f8a279cfdd9ff44bc6ec1248bb62b8c59ec407499f156a7ed7</a>
 
-                  <br />Pool B setRewardDistribution<a href="https://etherscan.io/tx/0x58415779ebf3249388599d8f8b909db181cc8be0f945faa9d4928de4b32432bf" target="_blank">0x58415779ebf3249388599d8f8b909db181cc8be0f945faa9d4928de4b32432bf</a>
-                  <br />Pool B setYFI<a href="https://etherscan.io/tx/0xfee6a907ca330292e613d76cb8bc0ebbc30a75df43a728f6e0bd06cf95b73a07" target="_blank">0xfee6a907ca330292e613d76cb8bc0ebbc30a75df43a728f6e0bd06cf95b73a07</a>
-                  <br />Pool B notifyRewardAmount<a href="https://etherscan.io/tx/0xb78f2a39a2d2e81938bc4e80e4733a18d9436ffc66892b1189b9751bfa736d6a" target="_blank">0xb78f2a39a2d2e81938bc4e80e4733a18d9436ffc66892b1189b9751bfa736d6a</a>
+                  <br />Pool B setRewardDistribution - <a href="https://etherscan.io/tx/0x58415779ebf3249388599d8f8b909db181cc8be0f945faa9d4928de4b32432bf" target="_blank">0x58415779ebf3249388599d8f8b909db181cc8be0f945faa9d4928de4b32432bf</a>
+                  <br />Pool B setYFI - <a href="https://etherscan.io/tx/0xfee6a907ca330292e613d76cb8bc0ebbc30a75df43a728f6e0bd06cf95b73a07" target="_blank">0xfee6a907ca330292e613d76cb8bc0ebbc30a75df43a728f6e0bd06cf95b73a07</a>
+                  <br />Pool B notifyRewardAmount - <a href="https://etherscan.io/tx/0xb78f2a39a2d2e81938bc4e80e4733a18d9436ffc66892b1189b9751bfa736d6a" target="_blank">0xb78f2a39a2d2e81938bc4e80e4733a18d9436ffc66892b1189b9751bfa736d6a</a>
+                  <br />Pool B Proposal #3 update - <a href="https://etherscan.io/tx/0xef56fd24ccfe8aa656acb44da7accc624179118f671d1cd3764114dc3c8e90b2" target="_blank">0xef56fd24ccfe8aa656acb44da7accc624179118f671d1cd3764114dc3c8e90b2</a>
+
+                  <br />EGGS token contract creation - <a href="https://etherscan.io/tx/0x04a0ee43f944e00de1419b3c005dc8ed87c3131482b0179dc5ed8a5aad6c4e6a" target="_blank">0x04a0ee43f944e00de1419b3c005dc8ed87c3131482b0179dc5ed8a5aad6c4e6a</a>
+                  <br />Add deployer as EGGS minter - <a href="https://etherscan.io/tx/0x925e7486bff1f42b3cb7d8fc904d04ae2436e386af4c2bfc5f74c95c66282d45" target="_blank">0x925e7486bff1f42b3cb7d8fc904d04ae2436e386af4c2bfc5f74c95c66282d45</a>
+                  <br />Mint 100,000 EGGS tokens - <a href="https://etherscan.io/tx/0x28df626b763c12e36346852c70fecfbd62ed9df56ae9d81b30a0528a69ea41f1" target="_blank">0x28df626b763c12e36346852c70fecfbd62ed9df56ae9d81b30a0528a69ea41f1</a>
+                  <br />Remove EGGS minter - <a href="https://etherscan.io/tx/0xc2ceb524db7ff98c3f39f4ca575e980649dd070325e4da20b688704483ce9c27" target="_blank">0xc2ceb524db7ff98c3f39f4ca575e980649dd070325e4da20b688704483ce9c27</a>
+                  <br />Burn EGGS admin key - <a href="https://etherscan.io/tx/0x10b543763276e3e999655424a734517047678ca82ad3d7658e80556de92dce81" target="_blank">0x10b543763276e3e999655424a734517047678ca82ad3d7658e80556de92dce81</a>
+                  <br />EGGS setAllow - <a href="https://etherscan.io/tx/0x58b9b03d95b34926dd414f8ddb3919f5240a42ddb563a12c24ba4cf1267f5569" target="_blank">0x58b9b03d95b34926dd414f8ddb3919f5240a42ddb563a12c24ba4cf1267f5569</a>
+                  <br />Pool C contract creation - <a href="https://etherscan.io/tx/0xd2c48a53f72a2e6d3540f7e6bc7b4a3a1eee866f040c5c64db897f25d0ef9d7c" target="_blank">0xd2c48a53f72a2e6d3540f7e6bc7b4a3a1eee866f040c5c64db897f25d0ef9d7c</a>
+                  <br />50,000 EGGS sent to Pool C - <a href="https://etherscan.io/tx/0x6d48da2c83e770c69b18b8b6fdd388d118d01377675537e4de1b7501751f3079" target="_blank">0x6d48da2c83e770c69b18b8b6fdd388d118d01377675537e4de1b7501751f3079</a>
+                  <br />Pool C setRewardDistribution - <a href="https://etherscan.io/tx/0x92c79ce6d036f9b06da1ca4b235cfaed9541a150e89685803f88788f90b2527f" target="_blank">0x92c79ce6d036f9b06da1ca4b235cfaed9541a150e89685803f88788f90b2527f</a>
+                  <br />Pool C setYFI - <a href="https://etherscan.io/tx/0xe7da793b32b1b0502c94f1874fbe929d9b891e2b3fec2932a5d196b620871b20" target="_blank">0xe7da793b32b1b0502c94f1874fbe929d9b891e2b3fec2932a5d196b620871b20</a>
+                  <br />Pool C notifyRewardAmount - <a href="https://etherscan.io/tx/0x34045b37649c1fbb63a214714f1ec06a9148038c10e1df2507db3649c47cb292" target="_blank">0x34045b37649c1fbb63a214714f1ec06a9148038c10e1df2507db3649c47cb292</a>
+                  <br />DAI/EGGS Balancer pool created - <a href="https://etherscan.io/tx/0xa9f3967e535ceca852f86d3f130e7b3ca6f9de4c375181fd3910de2537cade3d" target="_blank">0xa9f3967e535ceca852f86d3f130e7b3ca6f9de4c375181fd3910de2537cade3d</a>
+                  <br />Pool D contract creation - <a href="https://etherscan.io/tx/0x81ec9daae7acc9a45b4dc3351cd8178e6c55c1418f826a63d170d929877de8eb" target="_blank">0x81ec9daae7acc9a45b4dc3351cd8178e6c55c1418f826a63d170d929877de8eb</a>
+                  <br />49,999.9 EGGS sent to Pool D - <a href="https://etherscan.io/tx/0xc616712cadeca577f459862d077d753efb23eb0fcd374f8bdc8528e9c518b76b" target="_blank">0xc616712cadeca577f459862d077d753efb23eb0fcd374f8bdc8528e9c518b76b</a>
+                  <br />Pool D setRewardDistribution - <a href="https://etherscan.io/tx/0xec5be46a4c67a02d0bb8a76eac495400eb5b7a4a7ec8b157180cf878d04c1e58" target="_blank">0xec5be46a4c67a02d0bb8a76eac495400eb5b7a4a7ec8b157180cf878d04c1e58</a>
+                  <br />Pool D setYFI - <a href="https://etherscan.io/tx/0x1101449cfd94c9e9a4739819ed0bc2f2ccefba5cd86a1fb8e5706fa037203208" target="_blank">0x1101449cfd94c9e9a4739819ed0bc2f2ccefba5cd86a1fb8e5706fa037203208</a>
+                  <br />Pool D notifyRewardAmount - <a href="https://etherscan.io/tx/0xbe1eb0186b5057caaba86a1208e2f01e266fe458ef3cb3dfdb94c26adab9211e" target="_blank">0xbe1eb0186b5057caaba86a1208e2f01e266fe458ef3cb3dfdb94c26adab9211e</a>
 
                   <br /><br /><u>Credits:</u>
                   <br />Toast icon thanks to <a href={"https://www.iconfinder.com/"} target={"_blank"}>Iconfinder</a>.<br />"The Millennial's Dilemma" meme thanks to unknown artist.
@@ -343,7 +345,7 @@ class RewardPools extends Component {
         const {rewardPools, governanceContractVersion} = this.state
 
         return rewardPools.filter((rewardPool) => {
-            if (['Uniswap', 'Balancer'].includes(rewardPool.id)) {
+            if (['Uniswap', 'Balancer', 'PoolC', 'PoolD'].includes(rewardPool.id)) {
                 return true
             } else {
                 return false

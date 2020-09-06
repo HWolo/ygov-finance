@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
 import {
   Card,
@@ -186,22 +186,13 @@ class Home extends Component {
 
     return (
       <div className={ classes.root }>
-        <Card className={ `${classes.card} ${classes.earn}` } onClick={ () => { this.nav(location.pathname+'staking') } }>
-          <DetailsIcon className={ `${classes.icon} icon` } />
-          <Typography variant={'h3'} className={ `${classes.title} title` }>Stake</Typography>
-        </Card>
-        {/*<Card className={ `${classes.card} ${classes.zap}` } onClick={ () => { this.nav(location.pathname+'propose') } }>
-          <WbIncandescentIcon className={ `${classes.icon} icon` } />
-          <Typography variant={'h3'} className={ `${classes.title} title` }>Propose</Typography>
-        </Card>*/}
-        <Card className={ `${classes.card} ${classes.zap}` } onClick={ () => { this.nav(location.pathname+'vote') } }>
-          <HowToVoteIcon className={ `${classes.icon} icon` } />
-          <Typography variant={'h3'} className={ `${classes.title} title` }>Vote</Typography>
-        </Card>
-        {/*<Card className={ `${classes.card} ${classes.pool}` } onClick={ () => { this.nav(location.pathname+'claim') }}>
-          <AttachMoneyIcon className={ `${classes.icon} icon` } />
-          <Typography variant={'h3'} className={ `${classes.title} title` }>claim</Typography>
-        </Card>*/}
+        <Link to={"/staking"} className={ classes.link }>
+
+        <Typography variant={'h5'} className={classes.disaclaimer}><img src="/feature.jpg"
+                                                                        width="400"/><br/><br/>The choice is
+          yours.<br /><br /></Typography>
+
+        </Link>
       </div>
     )
   };
