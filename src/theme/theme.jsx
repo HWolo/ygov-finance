@@ -37,7 +37,7 @@ export const colors = {
   lightBlue: "#2F80ED",
   topaz: "#0b8f92",
   darkGray: "rgba(43,57,84,.5)",
-  borderBlue: 'rgba(25, 101, 233, 0.5)'
+  borderBlue: 'rgb(212 212 212)'
 };
 
 const breakpoints = createBreakpoints({
@@ -73,18 +73,18 @@ const iswapTheme =  {
       lineHeight: 1.2
     },
     h2: {
-      fontSize: '36px',
+      fontSize: '22px',
       fontWeight: '600',
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
       lineHeight: 1.2
     },
     h3: {
-      fontSize: '24px',
+      fontSize: '22px',
       fontWeight: '600',
       WebkitFontSmoothing: "antialiased",
       MozOsxFontSmoothing: "grayscale",
-      lineHeight: 1.2
+      lineHeight: 1.2,
     },
     h4: {
       fontSize: '16px',
@@ -132,12 +132,11 @@ const iswapTheme =  {
     },
     MuiButton: {
       root: {
-        borderRadius: '50px',
-        padding: '10px 24px'
+        borderRadius: '20px',
+        padding: '10px'
       },
       outlined: {
         padding: '10px 24px',
-        borderWidth: '2px !important'
       },
       text: {
         padding: '10px 24px'
@@ -173,6 +172,7 @@ const iswapTheme =  {
       },
       notchedOutline: {
         // border: "none !important"
+        border: '1px solid rgb(170 149 133) !important'
       }
     },
     MuiSnackbar : {
@@ -292,7 +292,7 @@ const iswapTheme =  {
       main: colors.blue
     },
     secondary: {
-      main: colors.topaz
+    main: colors.topaz
     },
     text: {
       primary: colors.text,
