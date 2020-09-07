@@ -161,6 +161,21 @@ const styles = theme => ({
       paddingBottom: '24px'
     }
   },
+   homeButton: {
+       background: 'rgb(241,241,241)',
+    fontSize: '18px',
+    color: 'rgb(170, 149, 133)',
+    padding: '12px',
+    paddingLeft: '25px',
+    paddingRight: '25px',
+    boxShadow: '1px 1px 1px 1px rgb(212 212 212)',
+    borderRadius: '20px',
+    cursor: 'pointer',
+       '&:hover': {
+           background: 'rgb(216 211 209)',
+           color: 'rgb(255 255 255)'
+       }
+   },
   icon: {
     fontSize: '60px',
     [theme.breakpoints.up('sm')]: {
@@ -169,6 +184,12 @@ const styles = theme => ({
   },
   link: {
     textDecoration: 'none'
+  },
+  homeImage: {
+      '&:hover': {
+      transform: 'scale(1.1, 1.1)',
+      transition: '0.3s ease'
+      }
   }
 });
 
@@ -188,9 +209,12 @@ class Home extends Component {
       <div className={ classes.root }>
         <Link to={"/staking"} className={ classes.link }>
 
-        <Typography variant={'h5'} className={classes.disaclaimer}><img src="/feature.jpg"
-                                                                        width="400"/><br/><br/>The choice is
-          yours.<br /><br /></Typography>
+        <Typography variant={'h5'} className={classes.disaclaimer}>
+            <img className={classes.homeImage} src="/toastlogonew1.png" width="200" style={{display: 'block', margin: 'auto'}}/>
+            <br/><br/>
+            <div className={ classes.homeButton }>The choice is yours</div>
+            <br /><br />
+            </Typography>
 
         </Link>
       </div>
