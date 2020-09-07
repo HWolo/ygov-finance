@@ -25,7 +25,7 @@ const styles = theme => ({
         flex: 1,
         display: 'flex',
         flexDirection: 'column',
-        maxWidth: '600px',
+        maxWidth: '800px',
         width: '100%',
         justifyContent: 'flex-start',
         alignItems: 'center',
@@ -112,15 +112,14 @@ const styles = theme => ({
         fontSize: '0.83rem',
         textOverflow: 'ellipsis',
         cursor: 'pointer',
-        padding: '14px 15px',
+        padding: '10px',
+        paddingLeft: '20px',
+        paddingRight: '20px',
         borderRadius: '50px',
-        border: '1px solid ' + colors.borderBlue,
+        border: "1px solid rgb(239 239 239)",
         alignItems: 'center',
         maxWidth: '500px',
-        float: 'right',
-        position: 'absolute',
-        right: '15px',
-        top: '15px',
+        marginBottom: '15px'
     },
     walletAddress: {
         padding: '0px 12px'
@@ -133,7 +132,7 @@ const styles = theme => ({
         width: '100%',
         display: 'flex',
         justifyContent: 'space-around',
-        paddingTop: '20px',
+        paddingTop: '50px',
         flexWrap: 'wrap'
     },
     rewardPoolContainer: {
@@ -142,13 +141,18 @@ const styles = theme => ({
         justifyContent: 'center',
         alignItems: 'center',
         flex: 1,
-        padding: '28px 30px',
-        borderRadius: '50px',
-        border: '1px solid ' + colors.borderBlue,
-        margin: '20px',
-        background: colors.white,
+        padding: '25px',
+        paddingTop: '30px',
+        paddingBottom: '30px',
+        borderRadius: '20px',
+        border: '1px solid rgb(228 227 227)',
+        boxShadow: '1px 1px 5px 1px rgb(226 226 226)',
+        margin: '0px',
+        marginBottom: '40px',
+        background: 'rgb(241,241,241)',
         minHeight: '300px',
-        minWidth: '200px',
+        maxWidth: '45%',
+        minWidth: '45%'
     },
     title: {
         width: '100%',
@@ -161,14 +165,50 @@ const styles = theme => ({
         color: colors.text
     },
     tokensList: {
-        color: colors.darkGray,
-        paddingBottom: '20px',
+        fontSize: '17px',
+    color: 'rgb(33 37 54)',
+    paddingBottom: '25px'
     },
     poolWebsite: {
         color: colors.darkGray,
         paddingBottom: '20px',
         textDecoration: 'none'
+    },
+    stakeButton: {
+    display: "block", width: "100%", 
+    background: "rgb(241,241,241)", 
+    color: "rgb(170, 149, 133)", 
+    fontWeight: "bold", 
+    marginTop: "15px", 
+    padding: "12px", 
+    border: "1px solid rgb(239 239 239)", 
+    boxShadow: "1px 1px 5px 1px rgb(212 212 212)", 
+    borderRadius: "20px", 
+    textDecoration: "none",
+    '&:hover': {
+           background: 'rgb(216 211 209)',
+           color: 'rgb(255 255 255)',
+           borderColor: 'rgb(216 211 209)',
+        },
+    },
+    stakeButtontwo: {
+  display: "block", width: "100%", 
+  background: "rgb(241,241,241)", 
+  color: "rgb(170, 149, 133)", 
+  fontWeight: "bold", 
+  padding: "14px", 
+  border: "1px solid rgb(239 239 239)", 
+  boxShadow: "1px 1px 5px 1px rgb(212 212 212)", 
+  borderRadius: "20px", 
+  textDecoration: "none", 
+  textAlign: "center",
+  '&:hover': {
+           background: 'rgb(216 211 209)',
+           color: 'rgb(255 255 255)',
+           borderColor: 'rgb(216 211 209)',
+        },
     }
+    
 })
 
 const emitter = Store.emitter
@@ -242,21 +282,18 @@ class RewardPools extends Component {
                             opacity: '1',
                             borderRadius: '10px',
                             width: '10px',
-                            height: '10px',
-                            marginRight: '3px',
-                            marginTop: '3px',
-                            marginLeft: '6px'
-                        }}></div>
+                            height: '10px'
+                         }}></div>
                         <Typography variant={'h4'} className={classes.walletAddress} noWrap>{address}</Typography>
                     </Card>
 
                     <Button
-                        variant="outlined"
-                        color="secondary"
+                      className={classes.stakeButtontwo}
+                      style={{ width: 'auto', padding:'5px', paddingLeft: '30px', paddingRight: '30px' }}
                         href={"https://uniswap.info/pair/0xbdde248cfe84258e16dbf3911c1ce9c93beb3eb9"}
                         target="_blank"
                     >
-                        <Typography variant={'h4'}>AVO-HOUSE Uniswap pair</Typography>
+                     AVO-HOUSE Uniswap pair
                     </Button>
 
                     <div className={classes.rewardPools}>
@@ -267,7 +304,7 @@ class RewardPools extends Component {
                     <hr />
                     {modalOpen && this.renderModal()}
                 </div>
-              <Typography variant={'h5'} className={classes.footer} style={{textAlign: 'left'}}>
+              <Typography variant={'h5'} className={classes.footer} style={{textAlign: 'center'}}>
                 <br /><br /><u>Addresses:</u>
                 <br />Toast.finance Deployer - <a href="https://etherscan.io/address/0x6cef9EcD79e87F8a88143eE9b464119bB296dA8b" target="_blank">0x6cef9EcD79e87F8a88143eE9b464119bB296dA8b</a>
                   <br />HOUSE token - <a href="https://etherscan.io/address/0x19810559df63f19cfe88923313250550edadb743" target="_blank">0x19810559df63f19cfe88923313250550edadb743</a>
@@ -333,10 +370,7 @@ class RewardPools extends Component {
                   <br />Pool D setRewardDistribution - <a href="https://etherscan.io/tx/0xec5be46a4c67a02d0bb8a76eac495400eb5b7a4a7ec8b157180cf878d04c1e58" target="_blank">0xec5be46a4c67a02d0bb8a76eac495400eb5b7a4a7ec8b157180cf878d04c1e58</a>
                   <br />Pool D setYFI - <a href="https://etherscan.io/tx/0x1101449cfd94c9e9a4739819ed0bc2f2ccefba5cd86a1fb8e5706fa037203208" target="_blank">0x1101449cfd94c9e9a4739819ed0bc2f2ccefba5cd86a1fb8e5706fa037203208</a>
                   <br />Pool D notifyRewardAmount - <a href="https://etherscan.io/tx/0xbe1eb0186b5057caaba86a1208e2f01e266fe458ef3cb3dfdb94c26adab9211e" target="_blank">0xbe1eb0186b5057caaba86a1208e2f01e266fe458ef3cb3dfdb94c26adab9211e</a>
-
-                  <br /><br /><u>Credits:</u>
-                  <br />Toast icon thanks to <a href={"https://www.iconfinder.com/"} target={"_blank"}>Iconfinder</a>.<br />"The Millennial's Dilemma" meme thanks to unknown artist.
-              </Typography>
+ </Typography>
             </div>
         )
     }
@@ -367,14 +401,13 @@ class RewardPools extends Component {
         }
 
         return (<div className={classes.rewardPoolContainer} key={rewardPool.id}>
+            <img src={rewardPool.tokens[0].iconImg} width="70" style={{display: 'block', margin: 'auto', marginTop: '0px', marginBottom: '17px'}}/>
             <Typography variant='h3' className={classes.poolName}>{rewardPool.name}</Typography>
-            <Typography variant='h5' className={classes.poolWebsite}><a href={rewardPool.link} target="_blank">Get {rewardPool.tokens[0].symbol}</a></Typography>
             <Typography varian='h5' className={classes.tokensList} align='center'>
-                Stake {rewardPool.tokens[0].symbol} for {rewardPool.tokens[0].rewardsSymbol}.
+                Stake {rewardPool.tokens[0].symbol} for {rewardPool.tokens[0].rewardsSymbol}
             </Typography>
             <Button
-                variant="outlined"
-                color="secondary"
+                className={classes.stakeButtontwo} 
                 onClick={() => {
                     if (rewardPool.tokens.length > 0) {
                         this.navigateStake(rewardPool)
@@ -383,6 +416,8 @@ class RewardPools extends Component {
             >
                 <Typography variant={'h4'}>{rewardPool.stakingName}</Typography>
             </Button>
+            <Typography style={{ width: "100%", textAlign: "center" }}><a className={classes.stakeButton} href={rewardPool.link} target="_blank">Get {rewardPool.tokens[0].symbol}</a></Typography>
+
         </div>)
     }
 
