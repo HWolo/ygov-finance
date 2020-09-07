@@ -20,8 +20,11 @@ const store = Store.store
 const styles = theme => ({
   footer: {
     //position: 'absolute',
+    marginBottom: "10px",
     top: '0px',
-    padding: '24px',
+    padding: '20px',
+    paddingLeft: '75px',
+    paddingRight: '50px',
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'flex-end',
@@ -39,14 +42,26 @@ const styles = theme => ({
     flexWrap: 'wrap',
     flexDirection: 'row',
     width: '100%',
-    textAlign: 'center'
+    textAlign: 'right'
   },
   footerText: {
     display: 'inline-block',
-    fontSize: '15px',
+    background: 'rgb(241,241,241)',
+    fontSize: '17px',
+    fontWeight: 'bold',
     color: 'rgb(170, 149, 133)',
-    cursor: 'pointer'
+    padding: '6px',
+    paddingLeft: '15px',
+    paddingRight: '15px',
+    boxShadow: '1px 1px 1px 1px rgb(212 212 212)',
+    borderRadius: '20px',
+    cursor: 'pointer',
+       '&:hover': {
+           background: 'rgb(216 211 209)',
+           color: 'rgb(255 255 255)'
+       }
   },
+
   languageContainer: {
     paddingLeft: '12px',
     display: 'none'
@@ -57,7 +72,7 @@ const styles = theme => ({
   },
   link: {
     textDecoration: 'none',
-    marginRight: "20px",
+    marginRight: "15px",
   }
 });
 
@@ -81,44 +96,31 @@ class Footer extends Component {
     return (
       <div className={classes.footer}>
         <div className={classes.footerLinks}>
-          <a href={"https://t.me/toastfinance"} target="_blank" className={ classes.link }>
+          <Link to={"/"} className={ classes.link } style={{float: "left"}}>
+            <Typography className={ classes.mainLogo } variant={ 'h6'} style={{background: "none", color: 'rgb(170, 149, 133)', boxShadow: "none",}}>
+              <img alt="Toast.finance" src="/toastlogonew1.png" height="24"  style={{marginBottom: '3px', verticalAlign: "middle"}} />
+              &nbsp;Toast.finance
+            </Typography>
+          </Link>
+
+          <Link to={"/staking"} className={ classes.link }>
             <Typography className={ classes.footerText } variant={ 'h6'}>
-              Telegram
+              Snacks
+            </Typography>
+          </Link>
+          <a href={"https://medium.com/@toastfinance/toast-finance-house-or-avo-5066766b2901"} target="_blank" className={ classes.link }>
+            <Typography className={ classes.footerText } variant={ 'h6'}>
+              Announcement
             </Typography>
           </a>
-          <a href={"https://github.com/Toast-finance/"} target="_blank" className={ classes.link }>
+          <a href={"https://toast.finance/calc/"} target="_blank" className={ classes.link }>
             <Typography className={ classes.footerText } variant={ 'h6'}>
-              GitHub
+              Calculator
             </Typography>
           </a>
-          <a href={"https://twitter.com/toastfinance"} target="_blank" className={ classes.link }>
+          <a href={"https://gov.toast.finance/"} target="_blank" className={ classes.link }>
             <Typography className={ classes.footerText } variant={ 'h6'}>
-              Twitter
-            </Typography>
-          </a>
-          <a href={"https://medium.com/@toastfinance/"} target="_blank" className={ classes.link }>
-            <Typography className={ classes.footerText } variant={ 'h6'}>
-              Medium
-            </Typography>
-          </a>
-          <a href={"https://etherscan.io/token/0x19810559df63f19cfe88923313250550edadb743"} target="_blank" className={ classes.link }>
-            <Typography className={ classes.footerText } variant={ 'h6'}>
-              HOUSE on Etherscan
-            </Typography>
-          </a>
-          <a href={"https://etherscan.io/token/0x774adc647a8d27947c8d7c098cdb4cdf30b126de"} target="_blank" className={ classes.link }>
-            <Typography className={ classes.footerText } variant={ 'h6'}>
-              AVO on Etherscan
-            </Typography>
-          </a>
-          <a href={"https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x19810559df63f19cfe88923313250550edadb743"} target="_blank" className={ classes.link }>
-            <Typography className={ classes.footerText } variant={ 'h6'}>
-              ETH-HOUSE on Uniswap
-            </Typography>
-          </a>
-          <a href={"https://uniswap.exchange/swap?inputCurrency=0x19810559df63f19cfe88923313250550edadb743&outputCurrency=0x774adc647a8d27947c8d7c098cdb4cdf30b126de"} target="_blank" className={ classes.link }>
-            <Typography className={ classes.footerText } variant={ 'h6'}>
-              HOUSE-AVO on Uniswap
+              Governance
             </Typography>
           </a>
         </div>
