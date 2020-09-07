@@ -125,7 +125,6 @@ class App extends Component {
               minHeight: '100vh',
               justifyContent: 'center',
               alignItems: 'center',
-              background: "rgb(242, 255, 225)"
             }}>
               <Switch>
                 <Route path="/stake">
