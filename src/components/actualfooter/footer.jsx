@@ -35,12 +35,16 @@ const styles = theme => ({
     }
   },
   footerLinks: {
-    display: 'flex',
+    display: 'block',
     flexWrap: 'wrap',
     flexDirection: 'row',
-    width: '100%'
+    width: '100%',
+    textAlign: 'center'
   },
   footerText: {
+    display: 'inline-block',
+    fontSize: '15px',
+    color: 'rgb(170, 149, 133)',
     cursor: 'pointer'
   },
   languageContainer: {
