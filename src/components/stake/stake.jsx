@@ -83,10 +83,13 @@ const styles = theme => ({
     }
   },
   disaclaimer: {
+    background: '#f71c1c',
+    border: 'none',
     padding: '12px',
-    border: '1px solid rgb(174, 174, 174)',
-    borderRadius: '0.75rem',
-    marginBottom: '24px',
+    paddingLeft: '20px',
+    paddingRight: '20px',
+    borderRadius: '20px',
+    marginBottom: '30px'
   },
   addressContainer: {
     display: 'flex',
@@ -104,7 +107,8 @@ const styles = theme => ({
     maxWidth: '500px',
     [theme.breakpoints.up('md')]: {
       width: '100%'
-    }
+    },
+
   },
   walletAddress: {
     padding: '0px 12px'
@@ -116,20 +120,25 @@ const styles = theme => ({
   overview: {
     display: 'flex',
     justifyContent: 'space-between',
-    padding: '28px 30px',
-    borderRadius: '50px',
-    border: '1px solid '+colors.borderBlue,
+    padding: '45px',
+    paddingTop: '32px',
+    paddingBottom: '32px',
+    borderRadius: '20px',
+    border: '1px solid rgb(228 227 227)',
+    boxShadow: '1px 1px 5px 1px rgb(226 226 226)',
     alignItems: 'center',
     marginTop: '40px',
     width: '100%',
-    background: colors.white
+    background: 'rgb(241,241,241)',
+    textAlign: 'center'
   },
   overviewField: {
     display: 'flex',
     flexDirection: 'column'
   },
   overviewTitle: {
-    color: colors.darkGray
+    color: 'rgb(170, 149, 133)',
+    marginBottom:'7px'
   },
   overviewValue: {
 
@@ -142,17 +151,20 @@ const styles = theme => ({
     maxWidth: '900px',
     flexWrap: 'wrap',
     background: colors.white,
-    border: '1px solid '+colors.borderBlue,
+    border: '1px solid rgb(228 227 227)',
+    boxShadow: '1px 1px 5px 1px rgb(226 226 226)',
     padding: '28px 30px',
-    borderRadius: '50px',
-    marginTop: '40px'
+    borderRadius: '20px',
+    marginTop: '40px',
+    background: 'rgb(241,241,241)',
+    marginBottom: '40px'
   },
   actionContainer: {
     minWidth: 'calc(50% - 40px)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    margin: '20px'
+    margin: '15px'
   },
   primaryButton: {
     '&:hover': {
@@ -164,10 +176,20 @@ const styles = theme => ({
     fontWeight: 500,
   },
   actionButton: {
-    padding: '20px 32px',
+    background: 'rgb(241,241,241)',
+    color: "rgb(170, 149, 133)", 
+    border: "1px solid rgb(239 239 239)",
+    boxShadow: "1px 1px 5px 1px rgb(212 212 212)",
+    padding: '15px',
     borderRadius: '50px',
+    '&:hover': {
+           background: 'rgb(216 211 209)',
+           color: 'rgb(255 255 255)',
+           borderColor: 'rgb(216 211 209)',
+        },
   },
   buttonText: {
+    fontSize: '18px',
     fontWeight: '700',
   },
   stakeButtonText: {
@@ -216,7 +238,15 @@ const styles = theme => ({
     marginTop: '20px'
   },
   stakeButton: {
-    minWidth: '300px'
+    minWidth: '300px',
+    borderRadius: '20px',
+    border: '1px solid rgb(228 227 227)',
+    boxShadow: '1px 1px 5px 1px rgb(226 226 226)',
+    '&:hover': {
+           background: 'rgb(216 211 209)',
+           color: 'rgb(255 255 255)',
+           borderColor: 'rgb(216 211 209)',
+        },
   },
   requirement: {
     display: 'flex',
@@ -234,6 +264,43 @@ const styles = theme => ({
     minWidth: '100%',
     marginLeft: '20px'
   },
+  tokenStakeName: {
+    fontSize: '25px',
+    fontWeight: 'bold',
+    marginTop: '5px',
+    marginBottom: '10px'
+  },
+  tokenStakeDescription: {
+    display: 'block',
+    fontSize: '19px'
+  },
+  stakeBackButton: {
+      background: 'rgb(241,241,241)', 
+      color: 'rgb(170, 149, 133)',
+      padding: '10px', 
+      paddingLeft: '15px', 
+      paddingRight: '15px', 
+      border: '1px solid rgb(228 227 227)', 
+      boxShadow: '1px 1px 1px 1px rgb(212 212 212)',
+      '&:hover': {
+           background: 'rgb(216 211 209)',
+           color: 'rgb(255 255 255)',
+           borderColor: 'rgb(216 211 209)',
+        },
+  },
+  stakeButtonTextNew: {
+    background: 'rgb(39 6 222)',
+    color: "rgb(170, 149, 133)", 
+    border: "1px solid rgb(39 6 222)",
+    boxShadow: "1px 1px 5px 1px rgb(39 6 222)",
+    padding: '15px',
+    borderRadius: '50px',
+    '&:hover': {
+           background: 'rgb(34 7 185)',
+           color: 'rgb(255 255 255)',
+           borderColor: 'rgb(39 6 222)',
+        },
+  }
 })
 
 const emitter = Store.emitter
@@ -369,23 +436,29 @@ class Stake extends Component {
 
     return (
       <div className={ classes.root }>
-        <Typography variant={'h5'} className={ classes.disaclaimer }>This project is in beta. Use at your own risk.</Typography>
+        <Typography variant={'h5'} className={ classes.disaclaimer } style={{ display:'none' }}>This project is in beta. Use at your own risk.</Typography>
+
         <div className={ classes.intro }>
           <Button
-            className={ classes.stakeButton }
-            variant="outlined"
-            color="secondary"
+            className={ classes.stakeBackButton }
             disabled={ loading }
             onClick={ () => {  this.props.history.push('/') } }
           >
             <Typography variant={ 'h4'}>Back</Typography>
           </Button>
-          <Card className={ classes.addressContainer } onClick={this.overlayClicked}>
+          <Card style={{ display:'none' }} className={ classes.addressContainer } onClick={this.overlayClicked}>
             <Typography variant={ 'h3'} className={ classes.walletTitle } noWrap>Wallet</Typography>
             <Typography variant={ 'h4'} className={ classes.walletAddress } noWrap>{ address }</Typography>
             <div style={{ background: '#DC6BE5', opacity: '1', borderRadius: '10px', width: '10px', height: '10px', marginRight: '3px', marginTop:'3px', marginLeft:'6px' }}></div>
           </Card>
         </div>
+
+     
+    <img src={pool.tokens[0].iconImg} width="100" style={{display: 'block', margin: 'auto', marginTop: '0px', marginBottom: '10px'}}/>
+<div className={ classes.tokenStakeName }>{pool.name}</div>
+<div className={ classes.tokenStakeDescription }>Stake {pool.tokens[0].symbol} for {pool.tokens[0].rewardsSymbol}</div>
+
+
         <div className={ classes.overview }>
           <div className={ classes.overviewField }>
             <Typography variant={ 'h3' } className={ classes.overviewTitle }>Your Balance</Typography>
@@ -437,17 +510,15 @@ class Stake extends Component {
 
     return (
       <div className={ classes.actions }>
-        <Typography variant={ 'h3'} className={ classes.title } noWrap>{ pool.name }</Typography>
         <div className={ classes.actionContainer}>
           <Button
             fullWidth
-            className={ classes.primaryButton }
-            variant="outlined"
-            color="primary"
+            className={ classes.stakeButtonTextNew }
+           
             disabled={ !pool.depositsEnabled || (['FeeRewards'].includes(pool.id) ?  (loading || !voteLockValid || !balanceValid) : loading) }
             onClick={ () => { this.navigateInternal('stake') } }
             >
-            <Typography className={ classes.stakeButtonText } variant={ 'h4'}>Stake Tokens</Typography>
+            <Typography className={ classes.stakeButtonText } >Stake Tokens</Typography>
           </Button>
         </div>
         <div className={ classes.actionContainer}>
@@ -459,7 +530,7 @@ class Stake extends Component {
             disabled={ loading || (['GovernanceV2'].includes(pool.id) && !gov_voteLockValid) }
             onClick={ () => { this.onClaim() } }
             >
-            <Typography className={ classes.buttonText } variant={ 'h4'}>Claim Rewards</Typography>
+            <Typography className={ classes.buttonText } >Claim Rewards</Typography>
           </Button>
         </div>
         <div className={ classes.actionContainer}>
@@ -471,7 +542,7 @@ class Stake extends Component {
             disabled={ loading  || (['GovernanceV2'].includes(pool.id) && gov_voteLockValid) || (pool.id === 'Governance' && (voteLockValid )) }
             onClick={ () => { this.navigateInternal('unstake') } }
             >
-            <Typography className={ classes.buttonText } variant={ 'h4'}>Unstake Tokens</Typography>
+            <Typography className={ classes.buttonText } >Unstake Tokens</Typography>
           </Button>
         </div>
         <div className={ classes.actionContainer}>
@@ -484,7 +555,7 @@ class Stake extends Component {
               disabled={ (pool.id === 'Governance' ? (loading || voteLockValid ) : loading  ) }
               onClick={ () => { this.onExit() } }
               >
-              <Typography className={ classes.buttonText } variant={ 'h4'}>Exit: Claim and Unstake</Typography>
+              <Typography className={ classes.buttonText } >Exit: Claim and Unstake</Typography>
             </Button>
           }
         </div>
