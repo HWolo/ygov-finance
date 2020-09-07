@@ -122,16 +122,17 @@ class Store {
       rewardPools: [
         {
           id: 'Balancer',
-          name: 'Pool A',
+          name: 'AVOCADOS!',
           website: 'Balancer',
           link: 'https://pools.balancer.exchange/#/pool/0xcfcdb690bdc88f43f7cac7d968d0d66d2118ad20/',
-          stakingName: 'Farm more avocados',
+          stakingName: 'Farm AVOCADOS',
           depositsEnabled: true,
           tokens: [
             {
               id: 'avo',
               address: '0xcfcdb690bdc88f43f7cac7d968d0d66d2118ad20',
               symbol: 'AVO_DAI_BPT',
+              iconImg: '/avocadoicon.png',
               abi: config.yfiABI,
               decimals: 18,
               rewardsAddress: '0x45352f928af429a01909b28e66b208c05de4df67',
@@ -145,16 +146,17 @@ class Store {
         },
         {
           id: 'Uniswap',
-          name: 'Pool B',
+          name: 'HOUSE!',
           website: 'Uniswap',
           link: 'https://uniswap.info/pair/0x2209b8260110af927AF0f2Eb96db471aE3Ab05EA',
-          stakingName: 'Earn income from your house',
+          stakingName: 'Earn income from your HOUSE',
           depositsEnabled: true,
           tokens: [
             {
               id: 'house',
               address: '0x19810559df63f19cfe88923313250550edadb743',
               symbol: 'HOUSE',
+              iconImg: '/housestakeicon.png',
               abi: config.yfiABI,
               decimals: 0,
               rewardsAddress: '0xc18109c4fee0b915cee8c56d65cc1b44c866aa35',
@@ -169,21 +171,22 @@ class Store {
         },
         {
           id: 'PoolC',
-          name: 'Pool C',
+          name: 'HOUSE / EGGS!',
           website: 'Uniswap',
           link: 'https://app.uniswap.org/#/add/0x19810559df63f19cfe88923313250550edadb743/ETH',
-          stakingName: 'Fry eggs at home',
+          stakingName: 'Fry EGGS at home',
           depositsEnabled: true,
           tokens: [
             {
               id: 'poolc',
               address: '0x2209b8260110af927af0f2eb96db471ae3ab05ea',
               symbol: 'HOUSE_ETH_UNI-LP',
+              iconImg: '/houseeggicon.png',
               abi: config.yfiABI,
               decimals: 18,
               rewardsAddress: '0x2988d4c36feefe70f5889e9ac61ae075db7fd217',
               rewardsABI: config.governanceABI,
-              rewardsSymbol: 'EGGS',
+              rewardsSymbol: 'EGGS!',
               rewardsDecimals: 0,
               balance: 0,
               stakedBalance: 0,
@@ -193,16 +196,17 @@ class Store {
         },
         {
           id: 'PoolD',
-          name: 'Pool D',
+          name: 'EGGS!',
           website: 'Balancer',
           link: 'https://pools.balancer.exchange/#/pool/0x6928f625e448cc4480378938d9e98439d7baf1b9/',
-          stakingName: 'Farm more eggs',
+          stakingName: 'Farm EGGS',
           depositsEnabled: true,
           tokens: [
             {
               id: 'avo',
               address: '0x6928f625e448cc4480378938d9e98439d7baf1b9',
               symbol: 'EGGS_DAI_BPT',
+              iconImg: '/eggstakeicon.png',
               abi: config.yfiABI,
               decimals: 18,
               rewardsAddress: '0xdb93f1079d58802ec914907a55352f7e55374cc3',
