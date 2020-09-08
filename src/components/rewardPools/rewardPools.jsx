@@ -370,6 +370,10 @@ class RewardPools extends Component {
                   <br />Pool D setRewardDistribution - <a href="https://etherscan.io/tx/0xec5be46a4c67a02d0bb8a76eac495400eb5b7a4a7ec8b157180cf878d04c1e58" target="_blank">0xec5be46a4c67a02d0bb8a76eac495400eb5b7a4a7ec8b157180cf878d04c1e58</a>
                   <br />Pool D setYFI - <a href="https://etherscan.io/tx/0x1101449cfd94c9e9a4739819ed0bc2f2ccefba5cd86a1fb8e5706fa037203208" target="_blank">0x1101449cfd94c9e9a4739819ed0bc2f2ccefba5cd86a1fb8e5706fa037203208</a>
                   <br />Pool D notifyRewardAmount - <a href="https://etherscan.io/tx/0xbe1eb0186b5057caaba86a1208e2f01e266fe458ef3cb3dfdb94c26adab9211e" target="_blank">0xbe1eb0186b5057caaba86a1208e2f01e266fe458ef3cb3dfdb94c26adab9211e</a>
+ 
+<br></br>
+ <br></br><u>Credits:</u><br></br>
+Toast logo and other icons from <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
  </Typography>
             </div>
         )
